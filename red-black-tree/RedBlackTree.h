@@ -27,11 +27,11 @@ struct Node{
 };
 
 template <typename T>
-class red_black_tree {
+class RedBlackTree {
 
 public:
 
-    red_black_tree();
+    RedBlackTree();
 
     void preOrder();
 
