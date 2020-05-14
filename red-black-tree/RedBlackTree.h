@@ -8,8 +8,6 @@
 #include <istream>
 using namespace std;
 
-
-
 // color enums for each node
 enum color {
     black = 0,
@@ -24,7 +22,6 @@ struct Node{
     Node* left;
     Node* right;
     color color;
-    typedef Node<T>* Nodeptr;
 };
 
 template <typename T>
@@ -63,9 +60,9 @@ public:
     void print();
 
 private:
-    Node<T> root;
+    Node<T>* root;
 
-    Node<T> TNULL;
+    Node<T>* TNULL;
 
     void initializeNULLNode(Node<T> _node, Node<T> _parent);
 

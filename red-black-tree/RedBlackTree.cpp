@@ -249,7 +249,7 @@ void RedBlackTree<T>::fixInsert(Node<T> _node) {
             break;
         }
     }
-    root.color = black;
+    root->color = black;
 }
 
 template<typename T>
