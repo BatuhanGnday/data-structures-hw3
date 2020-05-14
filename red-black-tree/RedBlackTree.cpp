@@ -273,16 +273,6 @@ void RedBlackTree<T>::printHelper(Node<T> _root, string indent, bool last) {
 
 //</editor-fold>
 
-
-template<typename T>
-RedBlackTree<T>::RedBlackTree() {
-    TNULL = new Node<T>;
-    TNULL -> color = black;
-    TNULL -> left = nullptr;
-    TNULL -> right = nullptr;
-    root = TNULL;
-}
-
 template<typename T>
 void RedBlackTree<T>::preOrder() {
     preOrderHelper(this->root);

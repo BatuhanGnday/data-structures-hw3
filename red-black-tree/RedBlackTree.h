@@ -24,6 +24,7 @@ struct Node{
     Node* left;
     Node* right;
     color color;
+    typedef Node<T>* Nodeptr;
 };
 
 template <typename T>
@@ -88,5 +89,14 @@ private:
 
 };
 
+
+template<typename T>
+RedBlackTree<T>::RedBlackTree() {
+    TNULL = new Node<T>;
+    TNULL -> color = black;
+    TNULL -> left = nullptr;
+    TNULL -> right = nullptr;
+    root = TNULL;
+}
 
 #endif //TEST_RED_BLACK_TREE_H
