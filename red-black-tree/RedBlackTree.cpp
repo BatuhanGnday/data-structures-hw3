@@ -5,8 +5,6 @@
 #include "RedBlackTree.h"
 #include <iostream>
 
-using namespace std;
-
 //<editor-fold desc="Helpers">
 
 template<typename T>
@@ -21,7 +19,7 @@ void RedBlackTree<T>::initializeNULLNode(Node<T> _node, Node<T> _parent) {
 template<typename T>
 void RedBlackTree<T>::preOrderHelper(Node<T> _node) {
     if(_node != TNULL){
-        cout << _node -> data << " ";
+        std::cout << _node -> data << " ";
         preOrderHelper(_node -> left);
         preOrderHelper(_node -> right);
     }
@@ -31,7 +29,7 @@ template<typename T>
 void RedBlackTree<T>::inOrderHelper(Node<T> _node) {
     if(_node != TNULL) {
         inOrderHelper(_node -> left);
-        cout << _node -> data << " ";
+        std::cout << _node -> data << " ";
         inOrderHelper(_node -> right);
     }
 }
@@ -41,7 +39,7 @@ void RedBlackTree<T>::postOrderHelper(Node<T> _node) {
     if(_node != TNULL) {
         postOrderHelper(_node -> left);
         postOrderHelper(_node -> right);
-        cout << _node -> data << " ";
+        std::cout << _node -> data << " ";
     }
 }
 
@@ -160,7 +158,7 @@ void RedBlackTree<T>::deleteNodeHelper(Node<T> _node, T key) {
     }
 
     if(z == TNULL) {
-        cout << "The item that you want to delete is not exist in the tree" << endl;
+        std::cout << "The item that you want to delete is not exist in the tree" << std::endl;
         return;
     }
 
@@ -253,19 +251,20 @@ void RedBlackTree<T>::fixInsert(Node<T> _node) {
 }
 
 template<typename T>
-void RedBlackTree<T>::printHelper(Node<T> _root, string indent, bool last) {
+void RedBlackTree<T>::printHelper(Node<T> _root, std::string indent, bool last) {
+    // char* fullText = strcpy()
     if (_root != TNULL) {
-        cout<<indent;
+        std::cout<<indent;
         if (last) {
-            cout<<"R----";
+            std::cout<<"R----";
             indent += "     ";
         } else {
-            cout<<"L----";
+            std::cout<<"L----";
             indent += "|    ";
         }
 
-        string sColor = _root.color?"RED":"BLACK";
-        cout<<_root->data<<"("<<sColor<<")"<<endl;
+        std::string sColor = _root.color?"RED":"BLACK";
+        std::cout<<_root->data<<"("<<sColor<<")"<< std::endl;
         printHelper(_root.left, indent, false);
         printHelper(_root.right, indent, true);
     }
@@ -445,6 +444,6 @@ void RedBlackTree<T>::deleteNode(T key) {
 template<typename T>
 void RedBlackTree<T>::print() {
     if(root) {
-        printHelper(this->root, "", true);
+        printHelper(this->root, " ", true);
     }
 }

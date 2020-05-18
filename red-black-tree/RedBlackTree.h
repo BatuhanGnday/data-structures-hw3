@@ -5,8 +5,8 @@
 #ifndef TEST_RED_BLACK_TREE_H
 #define TEST_RED_BLACK_TREE_H
 
-#include <istream>
-using namespace std;
+#include <stdio.h>
+#include <string>
 
 // color enums for each node
 enum color {
@@ -82,7 +82,7 @@ private:
 
     void fixInsert(Node<T> _node);
 
-    void printHelper(Node<T> _root, string indent, bool last);
+    void printHelper(Node<T> _root, std::string indent, bool last);
 
 };
 
